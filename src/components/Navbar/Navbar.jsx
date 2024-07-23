@@ -10,6 +10,25 @@ import Popup from "../Popup/Popup";
 const Menu = [
   {
     id: 1,
+    name: "Acerca de nosotros",
+    link: "/#",
+  },
+  {
+    id: 2,
+    name: "Contactanos",
+    link: "/#Contactanos",
+  },
+  {
+    id: 3,
+    name: "Metodos de pago",
+    link: "/#Metodos de pago",
+  },
+  
+];
+
+const DropdownLinks = [
+  {
+    id: 1,
     name: "Inicio",
     link: "/#",
   },
@@ -32,24 +51,6 @@ const Menu = [
     id: 5,
     name: "Periféricos",
     link: "/#perifericos",
-  },
-];
-
-const DropdownLinks = [
-  {
-    id: 1,
-    name: "Productos Populares",
-    link: "/#productos-populares",
-  },
-  {
-    id: 2,
-    name: "Más Vendidos",
-    link: "/#mas-vendidos",
-  },
-  {
-    id: 3,
-    name: "Más Valorados",
-    link: "/#mas-valorados",
   },
 ];
 
