@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Logo from "../../assets/logob.png";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping, FaUser, FaCaretDown, FaCaretRight } from "react-icons/fa";
+import { FaCartShopping, FaUser } from "react-icons/fa6";
+import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import PopupInitSession from "../Popup/PopupInitSession";
 import Popup from "../Popup/Popup";
@@ -22,6 +23,7 @@ const Menu = [
     name: "Metodos de pago",
     link: "/#Metodos de pago",
   },
+  
 ];
 
 const DropdownLinks = [
@@ -48,11 +50,7 @@ const DropdownLinks = [
   {
     id: 5,
     name: "Periféricos",
-    subcategories: [
-      { id: 1, name: "Mouse", link: "/#mouse" },
-      { id: 2, name: "Teclados", link: "/#teclados" },
-      { id: 3, name: "Auriculares", link: "/#auriculares" },
-    ],
+    link: "/#perifericos",
   },
 ];
 
@@ -147,32 +145,13 @@ const Navbar = () => {
             <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
-                  <li key={data.id} className="group relative">
+                  <li key={data.id}>
                     <a
                       href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-orange-200 flex items-center justify-between"
+                      className="inline-block w-full rounded-md p-2 hover:bg-orange-200"
                     >
                       {data.name}
-                      {data.subcategories && (
-                        <FaCaretRight className="ml-2" />
-                      )}
                     </a>
-                    {data.subcategories && (
-                      <div className="absolute left-full top-0 hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
-                        <ul>
-                          {data.subcategories.map((sub) => (
-                            <li key={sub.id}>
-                              <a
-                                href={sub.link}
-                                className="inline-block w-full rounded-md p-2 hover:bg-orange-200"
-                              >
-                                {sub.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </li>
                 ))}
               </ul>
