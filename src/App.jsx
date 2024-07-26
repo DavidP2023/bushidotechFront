@@ -10,8 +10,7 @@ import Subscribe from "./components/Subscribe/Subscribe";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-
-
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
@@ -19,6 +18,7 @@ const App = () => {
   const handleOrderPopup = () => {
     setOrderPopup(!orderPopup);
   };
+
   React.useEffect(() => {
     AOS.init({
       offset: 100,
@@ -41,6 +41,7 @@ const App = () => {
       <Testimonials />
       <Footer />
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
+      <WhatsAppButton /> {}
     </div>
   );
 };
