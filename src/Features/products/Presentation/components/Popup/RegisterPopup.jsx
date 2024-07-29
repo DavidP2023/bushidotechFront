@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { usePopupRegisterController } from "../../hooks/usePopupRegisterController_hook";
 import { PopupRegisterSucess } from "./PopupRegisterSucess";
 
+
 export const RegisterPopup = ({ showModal, setShowModal, }) => {
 
 
