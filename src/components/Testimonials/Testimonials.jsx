@@ -67,17 +67,17 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-10 mb-10">
+    <div className="py-16 mb-10 bg-gray-50 dark:bg-gray-900">
       <div className="container">
         {/* header section */}
-        <div className="text-center mb-10 max-w-[600px] mx-auto">
+        <div className="text-center mb-12 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-sm text-primary">
             Lo que dicen nuestros clientes
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
             Testimonios
           </h1>
-          <p data-aos="fade-up" className="text-xs text-gray-400">
+          <p data-aos="fade-up" className="text-xs text-gray-500 dark:text-gray-300">
             Descubre lo que nuestros clientes tienen que decir sobre nosotros.
           </p>
         </div>
@@ -87,24 +87,24 @@ const Testimonials = () => {
           <Slider {...settings}>
             {TestimonialData.map((data) => (
               <div className="my-6" key={data.id}>
-                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
-                  <div className="mb-4">
+                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-white relative">
+                  <div className="mb-4 flex justify-center">
                     <img
                       src={data.img}
                       alt={data.name}
-                      className="rounded-full w-20 h-20"
+                      className="rounded-full w-20 h-20 border-2 border-primary"
                     />
                   </div>
                   <div className="flex flex-col items-center gap-4">
-                    <div className="space-y-3">
-                      <p className="text-xs text-gray-500">{data.text}</p>
-                      <h1 className="text-xl font-bold text-black/80 dark:text-light">
+                    <div className="space-y-3 text-center">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{data.text}</p>
+                      <h1 className="text-lg font-semibold text-black dark:text-white">
                         {data.name}
                       </h1>
                     </div>
                   </div>
-                  <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">
-                    ,,
+                  <p className="text-black/10 dark:text-white/10 text-9xl font-serif absolute top-0 right-0">
+                    “
                   </p>
                 </div>
               </div>
