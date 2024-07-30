@@ -29,10 +29,10 @@ const ProductsData = [
 ];
 export const TopProducts = ({ handleOrderPopup }) => {
   return (
-    <div>
-      <div className="container">
-        {/* Header section */}
-        <div className="text-left mb-24">
+    <div className="mt-14 mb-12 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-12">
+      <div className="container mx-auto px-4">
+        {/* Sección de cabecera */}
+        <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-sm text-blue-500">
             Productos mejor valorados para ti
           </p>
@@ -44,8 +44,8 @@ export const TopProducts = ({ handleOrderPopup }) => {
           </p>
         </div>
 
-        {/* Body section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center">
+        {/* Sección del cuerpo */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8 place-items-center">
           {ProductsData.map((data) => (
             <div
               key={data.id}
@@ -53,17 +53,17 @@ export const TopProducts = ({ handleOrderPopup }) => {
               className="relative group max-w-[300px]"
             >
               <div className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-blue-500 hover:text-white shadow-xl duration-300">
-                {/* image section */}
-                <div className="h-[100px] flex justify-center items-center">
+                {/* Sección de imagen */}
+                <div className="h-[200px] flex justify-center items-center">
                   <img
                     src={data.img}
-                    alt=""
-                    className="max-w-[140px] block transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md"
+                    alt={data.title}
+                    className="max-w-[140px] transform group-hover:scale-105 duration-300 drop-shadow-md"
                   />
                 </div>
-                {/* details section */}
+                {/* Sección de detalles */}
                 <div className="p-4 text-center transition-all duration-300 ease-in-out transform group-hover:h-auto">
-                  {/* star rating */}
+                  {/* Clasificación por estrellas */}
                   <div className="w-full flex items-center justify-center gap-1">
                     <FaStar className="text-yellow-500" />
                     <FaStar className="text-yellow-500" />

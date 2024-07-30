@@ -18,15 +18,14 @@ const Menu = [
   },
   {
     id: 2,
-    name: "Contactanos",
+    name: "Contáctanos",
     link: "/#Contactanos",
   },
   {
     id: 3,
-    name: "Metodos de pago",
+    name: "Métodos de pago",
     link: "/#Metodos de pago",
   },
-  
 ];
 
 const DropdownLinks = [
@@ -57,11 +56,32 @@ const DropdownLinks = [
   },
 ];
 
-
+<<<<<<< HEAD:src/components/Navbar/Navbar.jsx
+const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+=======
+const DropdownLinks = [
+  {
+    id: 1,
+    name: "Productos Populares",
+    link: "/#productos-populares",
+  },
+  {
+    id: 2,
+    name: "Más Vendidos",
+    link: "/#mas-vendidos",
+  },
+  {
+    id: 3,
+    name: "Más Valorados",
+    link: "/#mas-valorados",
+  },
+];
 
  export const Navbar = () => {
   const [showInitSessionModal, setShowInitSessionModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false)
+>>>>>>> 10a349db213714ca265bc3313b6f68b489570d67:src/Features/products/Presentation/components/Navbar/Navbar.jsx
   const [orderPopup, setOrderPopup] = useState(false);
 
 
@@ -77,11 +97,11 @@ const DropdownLinks = [
     <div className="shadow-md bg-orange-500 dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* Navbar Superior */}
       <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center">
-          <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={Logo} alt="Logo" className="w-10" />
-              BUSHIDOTECH
+        <div className="container mx-auto flex justify-between items-center px-4">
+          <div className="flex items-center">
+            <img src={Logo} alt="Logo" className="w-12 mr-2" />
+            <a href="#" className="font-bold text-2xl sm:text-4xl text-white dark:text-gray-200">
+              BushidoTech
             </a>
           </div>
 
@@ -91,7 +111,7 @@ const DropdownLinks = [
               <input
                 type="text"
                 placeholder="Buscar"
-                className="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800"
+                className="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800"
               />
               <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
@@ -99,12 +119,10 @@ const DropdownLinks = [
             {/* Botón de Orden */}
             <button
               onClick={handleOrderPopup}
-              className="bg-gradient-to-r from-orange-500 to-orange-700 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+              className="bg-gradient-to-r from-orange-500 to-orange-700 transition-all duration-200 text-white py-2 px-4 rounded-lg flex items-center gap-2 group hover:from-orange-600 hover:to-orange-800 transform hover:scale-105"
             >
-              <span className="group-hover:block hidden transition-all duration-200">
-                Ordenar
-              </span>
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+              <span className="hidden sm:block group-hover:inline-block">Ordenar</span>
             </button>
 
             {/* Cambio de Modo Oscuro */}
@@ -113,58 +131,67 @@ const DropdownLinks = [
             </div>
 
             {/* Botón de Iniciar Sesión */}
-            <div className="flex items-center">
-              <button
-                className="bg-gradient-to-r from-orange-500 to-orange-700 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
-                onClick={handleShowModal}
-              >
-                <span className="group-hover:block hidden transition-all duration-200">
-                  Iniciar sesión
-                </span>
-                <FaUser className="text-xl text-white drop-shadow-sm cursor-pointer" />
-              </button>
-            </div>
+            <button
+              className="bg-gradient-to-r from-orange-500 to-orange-700 transition-all duration-200 text-white py-2 px-4 rounded-lg flex items-center gap-2 group hover:from-orange-600 hover:to-orange-800 transform hover:scale-105"
+              onClick={handleShowModal}
+            >
+              <FaUser className="text-xl text-white drop-shadow-sm cursor-pointer" />
+              <span className="hidden sm:block group-hover:inline-block">Iniciar sesión</span>
+            </button>
           </div>
         </div>
       </div>
 
       {/* Navbar Inferior */}
+<<<<<<< HEAD:src/components/Navbar/Navbar.jsx
+      <div className="bg-primary/30 py-2">
+        <div className="container mx-auto flex justify-center">
+          <ul className="sm:flex hidden items-center gap-6">
+            {Menu.map((data) => (
+              <li key={data.id}>
+                <a
+                  href={data.link}
+                  className="text-white dark:text-gray-200 px-4 py-2 hover:text-orange-300 transition duration-200"
+                >
+                  {data.name}
+                </a>
+              </li>
+            ))}
+            {/* Dropdown Simple y Links */}
+            <li className="group relative cursor-pointer">
+              <a href="#" className="flex items-center gap-[2px] py-2 text-white dark:text-gray-200 hover:text-orange-300 transition duration-200">
+                Productos Populares
+                <FaCaretDown className="ml-1 transition duration-200 group-hover:rotate-180" />
+              </a>
+              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 z-50 hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-lg">
+                <ul>
+                  {DropdownLinks.map((data) => (
+                    <li key={data.id}>
+                      <a
+                        href={data.link}
+                        className="block w-full rounded-md p-2 hover:bg-orange-200 transition duration-200"
+                      >
+                        {data.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+=======
       <div data-aos="zoom-in" className="flex justify-center">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a
-                href={data.link}
+              <Link
+                to={data.link}
                 className="inline-block px-4 hover:text-orange-700 duration-200"
               >
                 {data.name}
-              </a>
+              </Link>
+>>>>>>> 10a349db213714ca265bc3313b6f68b489570d67:src/Features/products/Presentation/components/Navbar/Navbar.jsx
             </li>
-          ))}
-          {/* Dropdown Simple y Links */}
-          <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
-              Productos Populares
-              <span>
-                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-              </span>
-            </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
-              <ul>
-                {DropdownLinks.map((data) => (
-                  <li key={data.id}>
-                    <a
-                      href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-orange-200"
-                    >
-                      {data.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
       <PopupInitSession showModal={showInitSessionModal} setShowModal={setShowInitSessionModal} setShowRegisterModal={setShowRegisterModal} />
